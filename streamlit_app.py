@@ -27,14 +27,14 @@ try:
   else:
 #streamlit.write('The user entered ', fruit_choice)
 
-  fruityvice_response = requests.get("https://fruityvice.com/api/fruit/"+fruit_choice)
+    fruityvice_response = requests.get("https://fruityvice.com/api/fruit/"+fruit_choice)
 #streamlit.text(fruityvice_response.json())
 #normalise the json output
 # dont run anything past here while we troubleshoot
 #streamlit.stop()
 
 
-  fruityvice_normalized = pandas.json_normalize(fruityvice_response.json())
+    fruityvice_normalized = pandas.json_normalize(fruityvice_response.json())
 # display output to screen
   streamlit.dataframe(fruityvice_normalized)
 except URLError as e:
